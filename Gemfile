@@ -10,3 +10,6 @@ gem 'authlogic'
 gem 'rakismet'
 gem 'nokogiri'
 gem 'pg'
+gem 'heroku'
+
+gem 'exception_notification', :require => 'exception_notifier'
