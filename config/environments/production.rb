@@ -46,5 +46,11 @@ Blogcast::Application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify
+  config.active_support.deprecation = :notify                   
+  
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[ERROR] ",
+    :sender_address => %{"Exception" <support@example.com>},
+    :exception_recipients => %w(todd.sedano@sv.cmu.edu),
+    :sections => %w{cmusv} + ExceptionNotifier::Notifier.default_sections  
 end
