@@ -1,12 +1,15 @@
 <div class="sidebar">
 	<div class="block-content" id="intro">
 		<h2><%= link_to "Blogger Meritocracy", posts_path %></h2>
+
 		<p>Simple Blog Changes Your Life.</p>
+
+        <div class="login"><%= link_to "Users? Login Here!", admin_path%></div>
 	</div><!--block-content-->
 	
 	<div class="block-content"  id="search">
 		<%= link_to "BlogCast Archive", archives_path %>
-		
+
 		<form method="get" action="/search">
 			<fieldset>
 				<input name="request" type="text"/>
@@ -16,4 +19,7 @@
 	</div><!--block-content-->
 	
 	<p class="subscribe"><a href="#">Subscribe ^_^</a></p>
+
+
+
 </div><!--sidebar-->

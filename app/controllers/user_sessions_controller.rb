@@ -13,7 +13,8 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_to root_url
     else
-      redirect_to admin_url
+     redirect_to admin_url
+     # render :action => "new"
     end
   end
   

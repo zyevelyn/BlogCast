@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 <title>Blogcast</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="author" content="Blogcast"/>
 <meta name="description" content="Blogcast, a better way to blog."/>
@@ -16,11 +17,12 @@
 	<div id="site-subtitle"> Simple Blog, Colorful Life </div>
 </div><!--header-->
 
+
+
 <hr class="hidden"/>
 
 <div id="main">
 <div id="content">
-
 <div id="login">
 <h1>Login</h1>
 <%= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
@@ -28,16 +30,16 @@
 		<tbody>
 			<tr>
 				<td class="label"><%= f.label :login, "Username" %></td>
-				<td class="field" colspan="2"><%= f.text_field :login, :class => "textbox" %></td>
+				<td class="field" colspan="3"><%= f.text_field :login, :class => "textbox" %></td>
 			</tr>
 			<tr>
 				<td class="label"><%= f.label :password %></td>
-				<td class="field" colspan="2"><%= f.password_field :password, :class => "textbox" %></td>
+				<td class="field" colspan="3"><%= f.password_field :password, :class => "textbox" %></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td></td>
-
+                 <div id="New Users"><%= link_to "New Users? Get your account Here!", new_user_path%></div>
 
                 <td class="buttons"><%= f.submit "Login" %></td>
 
