@@ -10472,3 +10472,1125 @@ Rendered comments/_comment.html.erb (1.0ms)
 Rendered layouts/_sidebar.html.erb (1.0ms)
 Rendered posts/show.html.erb within layouts/application (465.0ms)
 Completed 200 OK in 627ms (Views: 536.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-25 16:31:25 -0400
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.0ms)[0m  SELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (75.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered posts/_meta.html.erb (4.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 200ms (Views: 177.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-25 16:31:26 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (2.0ms)
+Completed 200 OK in 43ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-09-25 16:31:33 -0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sNQnZzP+7iQCx/I8ICgrAJpM983ZDzmfY3UppgYAEYE=", "user_session"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'admin' LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "login_count" = 22, "last_login_at" = '2011-09-25 20:25:38.331064', "current_login_at" = '2011-09-25 20:31:33.318368', "last_request_at" = '2011-09-25 20:31:33.318368', "updated_at" = '2011-09-25 20:31:33.319368' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-25 16:31:33 -0400
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.0ms)[0m  SELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-25 20:31:33.668388', "updated_at" = '2011-09-25 20:31:33.668388' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (40.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (3.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (220.0ms)
+Completed 200 OK in 420ms (Views: 231.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-25 16:31:33 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 31ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/archives" for 127.0.0.1 at 2011-09-25 16:31:39 -0400
+  Processing by ArchivesController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, id, posted_at FROM "posts" ORDER BY posted_at DESC[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-25 20:31:40.072754', "updated_at" = '2011-09-25 20:31:40.072754' WHERE "users"."id" = 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered archives/index.html.erb within layouts/application (199.0ms)
+Completed 200 OK in 401ms (Views: 334.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-25 16:31:42 -0400
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.0ms)[0m  SELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-25 20:31:43.180932', "updated_at" = '2011-09-25 20:31:43.181932' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (44.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (3.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (3.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (314.0ms)
+Completed 200 OK in 345ms (Views: 324.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-25 16:31:43 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 32ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-09-25 16:31:44 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-25 20:31:44.541010', "updated_at" = '2011-09-25 20:31:44.542010' WHERE "users"."id" = 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (45.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)
+Rendered posts/_meta.html.erb (3.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered posts/_meta.html.erb (117.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (465.0ms)
+Completed 200 OK in 496ms (Views: 475.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-25 16:31:44 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 33ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-09-25 16:31:45 -0400
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-25 20:31:45.705076', "updated_at" = '2011-09-25 20:31:45.706077' WHERE "users"."id" = 1
+Rendered posts/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 347ms (Views: 48.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/drafts" for 127.0.0.1 at 2011-09-25 16:31:48 -0400
+  Processing by DraftsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-25 20:31:48.691247', "updated_at" = '2011-09-25 20:31:48.692247' WHERE "users"."id" = 1[0m
+  [1m[35mDraft Load (1.0ms)[0m  SELECT title, id FROM "drafts" ORDER BY created_at DESC
+Rendered drafts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 161ms (Views: 70.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2011-09-25 16:31:52 -0400
+  Processing by UserSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sNQnZzP+7iQCx/I8ICgrAJpM983ZDzmfY3UppgYAEYE="}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-25 20:31:52.723478', "updated_at" = '2011-09-25 20:31:52.723478' WHERE "users"."id" = 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-25 20:31:52.790482', "updated_at" = '2011-09-25 20:31:52.790482' WHERE "users"."id" = 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 250ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-25 16:31:52 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (3.0ms)
+Completed 200 OK in 45ms (Views: 8.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-09-25 16:31:54 -0400
+  Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 67ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at C:/Users/camellia/BlogCast/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 01:39:00 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (123.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (5.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (4.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (638.0ms)
+Completed 200 OK in 1292ms (Views: 653.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:39:08 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 160ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-26 01:39:44 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (3.0ms)
+Completed 200 OK in 86ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-09-26 01:39:52 -0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "user_session"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'admin' LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "login_count" = 23, "last_login_at" = '2011-09-25 20:31:33.318368', "current_login_at" = '2011-09-26 05:39:52.247639', "last_request_at" = '2011-09-26 05:39:52.248639', "updated_at" = '2011-09-26 05:39:52.249639' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 129ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 01:39:52 -0400
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.0ms)[0m  SELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:39:52.544656', "updated_at" = '2011-09-26 05:39:52.545656' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (97.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (4.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (431.0ms)
+Completed 200 OK in 471ms (Views: 443.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:39:52 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 43ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at C:/Users/camellia/BlogCast/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 01:45:57 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:46:08.446462', "updated_at" = '2011-09-26 05:46:08.446462' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (169.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (6.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (5.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (769.4ms)
+Completed 200 OK in 1722ms (Views: 788.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:46:09 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 220ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2011-09-26 01:46:16 -0400
+  Processing by UserSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s="}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:46:16.495103', "updated_at" = '2011-09-26 05:46:16.496103' WHERE "users"."id" = 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:46:16.516104', "updated_at" = '2011-09-26 05:46:16.516104' WHERE "users"."id" = 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 222ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-26 01:46:16 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (5.0ms)
+Completed 200 OK in 119ms (Views: 14.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 01:46:22 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (297.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (6.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (5.0ms)
+Rendered layouts/_sidebar.html.erb (2.0ms)
+Rendered posts/index.html.erb within layouts/application (453.0ms)
+Completed 200 OK in 510ms (Views: 475.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:46:22 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 67ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-26 01:46:25 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (5.0ms)
+Completed 200 OK in 125ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-09-26 01:46:26 -0400
+  Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 198ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 01:49:08 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (64.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (5.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (5.0ms)
+Rendered layouts/_sidebar.html.erb (2.0ms)
+Rendered posts/index.html.erb within layouts/application (376.0ms)
+Completed 200 OK in 422ms (Views: 395.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:49:08 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 62ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/5-pic-works" for 127.0.0.1 at 2011-09-26 01:49:15 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5-pic-works"}
+  [1m[36mPost Load (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (7.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/show.html.erb within layouts/application (601.2ms)
+Completed 200 OK in 773ms (Views: 641.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:49:16 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 68ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-26 01:56:50 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (4.0ms)
+Completed 200 OK in 53ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-09-26 01:56:56 -0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "user_session"=>{"login"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'admin' LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "login_count" = 24, "last_login_at" = '2011-09-26 05:39:52.247639', "current_login_at" = '2011-09-26 05:56:56.302657', "last_request_at" = '2011-09-26 05:56:56.302657', "updated_at" = '2011-09-26 05:56:56.303657' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 171ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 01:56:56 -0400
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.0ms)[0m  SELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:56:56.544670', "updated_at" = '2011-09-26 05:56:56.544670' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (50.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (3.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (4.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (258.0ms)
+Completed 200 OK in 293ms (Views: 271.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:56:56 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 47ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/5-pic-works" for 127.0.0.1 at 2011-09-26 01:56:59 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5-pic-works"}
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:56:59.605013', "updated_at" = '2011-09-26 05:56:59.605013' WHERE "users"."id" = 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (5.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/show.html.erb within layouts/application (237.0ms)
+Completed 200 OK in 365ms (Views: 252.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:56:59 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 56ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/Your%20site%20web" for 127.0.0.1 at 2011-09-26 01:57:05 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"Your site web"}
+  [1m[36mPost Load (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 0 LIMIT 1[0m
+Completed 404 Not Found in 23ms
+Rendering 404 with exception: Couldn't find Post with ID=Your site web
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:33:in `render_404'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/posts/5-pic-works/comments/6" for 127.0.0.1 at 2011-09-26 01:57:17 -0400
+  Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "post_id"=>"5-pic-works", "id"=>"6"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:57:18.186313', "updated_at" = '2011-09-26 05:57:18.187313' WHERE "users"."id" = 1
+  [1m[36mPost Load (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = 6 LIMIT 1
+  [1m[36mAREL (15.0ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = 6[0m
+Redirected to http://localhost:3000/posts/5-pic-works#comments
+Completed 302 Found in 303ms
+
+
+Started GET "/posts/5-pic-works" for 127.0.0.1 at 2011-09-26 01:57:18 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5-pic-works"}
+  [1m[35mPost Load (0.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:57:18.684341', "updated_at" = '2011-09-26 05:57:18.685341' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (8.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/show.html.erb within layouts/application (273.0ms)
+Completed 200 OK in 438ms (Views: 322.0ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:57:18 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 45ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/5-pic-works/spams" for 127.0.0.1 at 2011-09-26 01:57:21 -0400
+  Processing by SpamsController#index as HTML
+  Parameters: {"post_id"=>"5-pic-works"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:57:21.663085', "updated_at" = '2011-09-26 05:57:21.663085' WHERE "users"."id" = 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "spams"[0m
+  [1m[35mPost Load (1.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "spams" WHERE ("spams".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "spams" WHERE ("spams".post_id = 5)
+  [1m[36mSpam Load (0.0ms)[0m  [1mSELECT "spams".* FROM "spams" WHERE ("spams".post_id = 5)[0m
+Rendered spams/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 249ms (Views: 74.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-09-26 01:57:24 -0400
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:57:24.238805', "updated_at" = '2011-09-26 05:57:24.238805' WHERE "users"."id" = 1
+Rendered posts/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 246ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-09-26 01:57:26 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:57:26.275495', "updated_at" = '2011-09-26 05:57:26.275495' WHERE "users"."id" = 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (88.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)
+Rendered posts/_meta.html.erb (5.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered posts/_meta.html.erb (3.0ms)
+Rendered layouts/_sidebar.html.erb (2.0ms)
+Rendered posts/index.html.erb within layouts/application (321.0ms)
+Completed 200 OK in 358ms (Views: 329.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:57:26 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 43ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/5-pic-works" for 127.0.0.1 at 2011-09-26 01:57:27 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5-pic-works"}
+  [1m[35mPost Load (1.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:57:27.676575', "updated_at" = '2011-09-26 05:57:27.677575' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/show.html.erb within layouts/application (229.0ms)
+Completed 200 OK in 368ms (Views: 245.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:57:27 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 51ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/logout" for 127.0.0.1 at 2011-09-26 01:58:07 -0400
+  Processing by UserSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:58:08.136056', "updated_at" = '2011-09-26 05:58:08.137056' WHERE "users"."id" = 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:58:08.154057', "updated_at" = '2011-09-26 05:58:08.155057' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 134ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-26 01:58:08 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (4.0ms)
+Completed 200 OK in 54ms (Views: 10.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-09-26 01:58:15 -0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "user_session"=>{"login"=>"wcy", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'wcy' LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "failed_login_count" = 1, "updated_at" = '2011-09-26 05:58:15.600392' WHERE "users"."id" = 2[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 175ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-26 01:58:15 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (3.0ms)
+Completed 200 OK in 85ms (Views: 9.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-09-26 01:58:23 -0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "user_session"=>{"login"=>"wcy", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'wcy' LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "failed_login_count" = 2, "updated_at" = '2011-09-26 05:58:23.650357' WHERE "users"."id" = 2[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 120ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-09-26 01:58:23 -0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb (4.0ms)
+Completed 200 OK in 54ms (Views: 10.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-09-26 01:58:32 -0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "user_session"=>{"login"=>"jingli", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'jingli' LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "login_count" = 3, "last_login_at" = '2011-09-23 14:14:48.669269', "current_login_at" = '2011-09-26 05:58:32.300157', "last_request_at" = '2011-09-26 05:58:32.300157', "updated_at" = '2011-09-26 05:58:32.301157' WHERE "users"."id" = 3[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 114ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 01:58:32 -0400
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.0ms)[0m  SELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:58:32.543171', "updated_at" = '2011-09-26 05:58:32.543171' WHERE "users"."id" = 3[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (52.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (3.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (288.0ms)
+Completed 200 OK in 323ms (Views: 298.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:58:32 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 42ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
+
+
+Started GET "/posts/5-pic-works" for 127.0.0.1 at 2011-09-26 01:58:35 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5-pic-works"}
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:58:35.436504', "updated_at" = '2011-09-26 05:58:35.436504' WHERE "users"."id" = 3
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (6.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered comments/_comment.html.erb (4.0ms)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/show.html.erb within layouts/application (266.0ms)
+Completed 200 OK in 388ms (Views: 280.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 01:58:35 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 44ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/Your%20site%20web" for 127.0.0.1 at 2011-09-26 01:58:39 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"Your site web"}
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 0 LIMIT 1[0m
+Completed 404 Not Found in 56ms
+Rendering 404 with exception: Couldn't find Post with ID=Your site web
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:33:in `render_404'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
+
+
+Started GET "/posts/Your%20site%20web" for 127.0.0.1 at 2011-09-26 01:59:34 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"Your site web"}
+  [1m[35mPost Load (0.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 0 LIMIT 1
+Completed 404 Not Found in 22ms
+Rendering 404 with exception: Couldn't find Post with ID=Your site web
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:33:in `render_404'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started POST "/posts/5-pic-works/comments/preview" for 127.0.0.1 at 2011-09-26 01:59:47 -0400
+  Processing by CommentsController#preview as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "comment"=>{"name"=>"Jing", "email"=>"Your Email", "website"=>"Your site web", "content"=>"*Your FootPrint*"}, "post_id"=>"5-pic-works"}
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:59:47.813913', "updated_at" = '2011-09-26 05:59:47.813913' WHERE "users"."id" = 3
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/preview.js.erb (12.0ms)
+Completed 200 OK in 409ms (Views: 30.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/posts/5-pic-works/comments" for 127.0.0.1 at 2011-09-26 01:59:53 -0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "comment"=>{"name"=>"Jing", "email"=>"Your Email", "website"=>"Your site web", "content"=>"*Your FootPrint*"}, "post_id"=>"5-pic-works"}
+  [1m[36mPost Load (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 05:59:53.270923', "updated_at" = '2011-09-26 05:59:53.270923' WHERE "users"."id" = 3
+  [1m[36mAREL (15.6ms)[0m  [1mINSERT INTO "comments" ("name", "email", "website", "content", "admin", "post_id", "created_at", "updated_at", "comment_type", "permalink", "user_ip", "user_agent", "referrer") VALUES ('Jing', 'Your Email', 'Your site web', '*Your FootPrint*', 't', 5, '2011-09-26 05:59:53.333324', '2011-09-26 05:59:53.333324', 'comment', 'http://localhost:3000/posts/5-pic-works', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.186 Safari/535.1', 'http://localhost:3000/posts/5-pic-works')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered comments/_comment.html.erb (0.0ms)
+Rendered comments/create.js.erb (15.6ms)
+Completed 200 OK in 332ms (Views: 31.2ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/posts/5-pic-works/comments" for 127.0.0.1 at 2011-09-26 01:59:58 -0400
+  Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "comment"=>{"name"=>"Jing", "email"=>"Your Email", "website"=>"Your site web", "content"=>"*Your FootPrint*"}, "post_id"=>"5-pic-works"}
+  [1m[35mPost Load (0.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 05:59:58.577511', "updated_at" = '2011-09-26 05:59:58.577511' WHERE "users"."id" = 3[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "comments" ("name", "email", "website", "content", "admin", "post_id", "created_at", "updated_at", "comment_type", "permalink", "user_ip", "user_agent", "referrer") VALUES ('Jing', 'Your Email', 'Your site web', '*Your FootPrint*', 't', 5, '2011-09-26 05:59:58.630514', '2011-09-26 05:59:58.630514', 'comment', 'http://localhost:3000/posts/5-pic-works', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.186 Safari/535.1', 'http://localhost:3000/posts/5-pic-works')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered comments/create.js.erb (17.0ms)
+Completed 200 OK in 366ms (Views: 25.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/posts/5-pic-works/comments/11" for 127.0.0.1 at 2011-09-26 02:00:05 -0400
+  Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cFvqrlTjkVTTRQbVTlRMjIvW1AONXsGSeSTlLSQxQ0s=", "post_id"=>"5-pic-works", "id"=>"11"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 06:00:05.593619', "updated_at" = '2011-09-26 06:00:05.593619' WHERE "users"."id" = 3[0m
+  [1m[35mPost Load (0.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = 11 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  DELETE FROM "comments" WHERE "comments"."id" = 11
+Redirected to http://localhost:3000/posts/5-pic-works#comments
+Completed 302 Found in 237ms
+
+
+Started GET "/posts/5-pic-works" for 127.0.0.1 at 2011-09-26 02:00:05 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5-pic-works"}
+  [1m[36mPost Load (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 06:00:06.036644', "updated_at" = '2011-09-26 06:00:06.036644' WHERE "users"."id" = 3
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (8.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (3.0ms)
+Rendered comments/_comment.html.erb (2.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/show.html.erb within layouts/application (303.0ms)
+Completed 200 OK in 417ms (Views: 315.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 02:00:06 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 56ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-09-26 02:00:08 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 06:00:08.819597', "updated_at" = '2011-09-26 06:00:08.820597' WHERE "users"."id" = 3
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (51.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)
+Rendered posts/_meta.html.erb (5.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered posts/_meta.html.erb (5.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (242.0ms)
+Completed 200 OK in 279ms (Views: 252.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 02:00:09 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 40ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 02:00:11 -0400
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.0ms)[0m  SELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 06:00:11.816337', "updated_at" = '2011-09-26 06:00:11.816337' WHERE "users"."id" = 3[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)
+Rendered posts/_meta.html.erb (50.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)[0m
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (3.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (261.0ms)
+Completed 200 OK in 298ms (Views: 274.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 02:00:12 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 39ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-09-26 02:00:12 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 06:00:13.043407', "updated_at" = '2011-09-26 06:00:13.044407' WHERE "users"."id" = 3
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (54.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered posts/_meta.html.erb (42.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (273.0ms)
+Completed 200 OK in 311ms (Views: 282.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 02:00:13 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 35ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-09-26 02:00:15 -0400
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 06:00:15.230312', "updated_at" = '2011-09-26 06:00:15.231312' WHERE "users"."id" = 3
+Rendered posts/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 186ms (Views: 34.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-09-26 02:00:16 -0400
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT title, author, id, content, posted_at FROM "posts" ORDER BY posted_at DESC LIMIT 15[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "last_request_at" = '2011-09-26 06:00:16.403379', "updated_at" = '2011-09-26 06:00:16.403379' WHERE "users"."id" = 3
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 5)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 5)[0m
+Rendered posts/_meta.html.erb (56.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 4)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 4)
+Rendered posts/_meta.html.erb (4.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered posts/_meta.html.erb (4.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/index.html.erb within layouts/application (256.0ms)
+Completed 200 OK in 292ms (Views: 265.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/public/images/filter.png" for 127.0.0.1 at 2011-09-26 02:00:16 -0400
+  Processing by ErrorsController#routing as 
+  Parameters: {"a"=>"public/images/filter.png"}
+Completed 500 Internal Server Error in 40ms
+Rendering 500 with exception: Missing template C:/Users/camellia/BlogCast/public/404.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"
+
+ActionView::MissingTemplate (Missing template C:/Users/camellia/BlogCast/public/500.html with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]} in view paths "C:/Users/camellia/BlogCast/app/views", "C:/Users/camellia/BlogCast", "C:/"):
+  app/controllers/application_controller.rb:25:in `render_500'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (2.0ms)
+
+
+Started GET "/posts/3-test" for 127.0.0.1 at 2011-09-26 02:00:21 -0400
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3-test"}
+  [1m[35mPost Load (1.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = '2011-09-26 06:00:21.752392', "updated_at" = '2011-09-26 06:00:21.753392' WHERE "users"."id" = 3[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)
+Rendered posts/_meta.html.erb (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".post_id = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 3)[0m
+Rendered comments/_comment.html.erb (4.0ms)
+Rendered layouts/_sidebar.html.erb (1.0ms)
+Rendered posts/show.html.erb within layouts/application (230.0ms)
+Completed 200 OK in 310ms (Views: 242.0ms | ActiveRecord: 3.0ms)

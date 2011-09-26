@@ -3,7 +3,9 @@
 		<h2><%= link_to "Blogger Meritocracy", posts_path %></h2>
 
 		<p>Simple Blog Changes Your Life.</p>
+      <% if not current_user %>
       <div class="login"><%= link_to "Users? Login Here!", admin_path%></div>
+      <% end %>
 
 
 	</div><!--block-content-->
